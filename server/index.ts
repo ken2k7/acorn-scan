@@ -2,6 +2,8 @@ import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import { serve } from '@hono/node-server'
 import { GoogleGenAI } from '@google/genai'
+import { createHash } from 'node:crypto'
+import { readFileSync, existsSync } from 'node:fs'
 
 const app = new Hono()
 // The Flutter web app runs on a different port, so the browser needs CORS.
@@ -164,7 +166,16 @@ app.post('/scan', async (c) => {
 
   try {
     const bytes = Buffer.from(await file.arrayBuffer())
-    const raw: any = await readLabel(bytes, mime)
+
+    // Offline fallback: if we have a recorded reading of THIS exact image
+    // (matched by content hash, never by filename), use it instead of calling
+    // the model. This keeps the bundled sample labels instant and reliable even
+    // when the API is slow or offline. Any other image still goes to Gemini.
+    const hash = createHash('sha256').update(bytes).digest('hex')
+    const cacheFile = `samples/${hash}.reading.json`
+    const raw: any = existsSync(cacheFile)
+      ? JSON.parse(readFileSync(cacheFile, 'utf8'))
+      : await readLabel(bytes, mime)
     const medications = validate(raw).map((m: any) => ({ ...m, schedule: buildSchedule(m) }))
     return c.json({ dispensed_date: raw?.dispensed_date ?? null, pharmacy: raw?.pharmacy ?? null, medications })
   } catch (err) {

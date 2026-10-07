@@ -1,0 +1,85 @@
+{
+  "dispensed_date": "2026-10-02",
+  "pharmacy": "RIVERGATE POLYCLINIC PHARMACY",
+  "medications": [
+    {
+      "drug_name": "METFORMIN 500MG TABLET",
+      "prn": false,
+      "stopped": false,
+      "source_quote": "METFORMIN 500MG TABLET TAKE ONE (1) TABLET TWICE A DAY 1-0-1 AFTER FOOD Qty: 60 tablet For: Diabetes",
+      "confidence": 0.99,
+      "dose_quantity": 1,
+      "dose_unit": "tablet",
+      "duration_days": null,
+      "form": "tablet",
+      "frequency_as_written": "TWICE A DAY 1-0-1 AFTER FOOD",
+      "quantity_dispensed": "60 tablet",
+      "special_instructions": "For: Diabetes",
+      "strength": "500MG",
+      "times_of_day": [
+        "morning",
+        "evening"
+      ],
+      "times_per_day": 2,
+      "with_food": "after_food"
+    },
+    {
+      "drug_name": "AMLODIPINE 5MG TABLET",
+      "prn": false,
+      "stopped": false,
+      "source_quote": "AMLODIPINE 5MG TABLET TAKE ONE (1) TABLET EVERY MORNING 1-0-0 Qty: 30 tablet For: Blood pressure",
+      "confidence": 0.99,
+      "dose_quantity": 1,
+      "dose_unit": "tablet",
+      "duration_days": null,
+      "form": "tablet",
+      "frequency_as_written": "EVERY MORNING 1-0-0",
+      "quantity_dispensed": "30 tablet",
+      "special_instructions": "For: Blood pressure",
+      "strength": "5MG",
+      "times_of_day": [
+        "morning"
+      ],
+      "times_per_day": 1,
+      "with_food": null
+    },
+    {
+      "drug_name": "ATORVASTATIN 20MG TABLET",
+      "prn": false,
+      "stopped": false,
+      "source_quote": "ATORVASTATIN 20MG TABLET TAKE ONE (1) TABLET AT NIGHT 0-0-1 Qty: 30 tablet For: Cholesterol",
+      "confidence": 0.99,
+      "dose_quantity": 1,
+      "dose_unit": "tablet",
+      "duration_days": null,
+      "form": "tablet",
+      "frequency_as_written": "AT NIGHT 0-0-1",
+      "quantity_dispensed": "30 tablet",
+      "special_instructions": "For: Cholesterol",
+      "strength": "20MG",
+      "times_of_day": [
+        "bedtime"
+      ],
+      "times_per_day": 1,
+      "with_food": null
+    },
+    {
+      "drug_name": "PARACETAMOL 500MG TABLET",
+      "prn": true,
+      "stopped": false,
+      "source_quote": "PARACETAMOL 500MG TABLET TAKE TWO (2) TABLETS WHEN REQUIRED FOR PAIN PRN Qty: 20 tablet Max 4 times a day",
+      "confidence": 0.99,
+      "dose_quantity": 2,
+      "dose_unit": "tablets",
+      "duration_days": null,
+      "form": "tablet",
+      "frequency_as_written": "WHEN REQUIRED FOR PAIN PRN",
+      "quantity_dispensed": "20 tablet",
+      "special_instructions": "Max 4 times a day",
+      "strength": "500MG",
+      "times_of_day": [],
+      "times_per_day": null,
+      "with_food": null
+    }
+  ]
+}

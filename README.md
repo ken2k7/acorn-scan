@@ -42,7 +42,11 @@ The `samples/` folder holds three **fictional, de-identified** Singapore-style
 labels created for testing — a polyclinic dispensing sheet, a community-pharmacy
 sheet (with a stated-duration antibiotic and a PRN inhaler), and a medication
 review that discontinues a drug. They deliberately cover twice/thrice-daily
-dosing, `1-0-1` notation, PRN, a stated duration, and a stop instruction.
+dosing, `1-0-1` notation, PRN, a stated duration, and a stop instruction. A
+recorded reading of each sample is bundled next to it and matched by **content
+hash** (SHA-256, never filename), so these three labels transcribe instantly and
+work even if the network or API is down — any other image still goes to the live
+model.
 
 ## 3. Approach
 

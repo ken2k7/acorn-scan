@@ -1,0 +1,82 @@
+{
+  "dispensed_date": null,
+  "pharmacy": "NORTHPOINT FAMILY CLINIC",
+  "medications": [
+    {
+      "drug_name": "Metformin",
+      "prn": false,
+      "stopped": false,
+      "source_quote": "Metformin 1g tablet\n1 tablet twice a day (1-0-1), after food",
+      "confidence": 1,
+      "dose_quantity": 1,
+      "dose_unit": "tablet",
+      "duration_days": null,
+      "form": "tablet",
+      "frequency_as_written": "1 tablet twice a day (1-0-1), after food",
+      "quantity_dispensed": null,
+      "special_instructions": null,
+      "strength": "1g",
+      "times_of_day": [],
+      "times_per_day": 2,
+      "with_food": "after_food"
+    },
+    {
+      "drug_name": "Amlodipine",
+      "prn": false,
+      "stopped": false,
+      "source_quote": "Amlodipine 5mg tablet\n1 tablet every morning (1-0-0)",
+      "confidence": 1,
+      "dose_quantity": 1,
+      "dose_unit": "tablet",
+      "duration_days": null,
+      "form": "tablet",
+      "frequency_as_written": "1 tablet every morning (1-0-0)",
+      "quantity_dispensed": null,
+      "special_instructions": null,
+      "strength": "5mg",
+      "times_of_day": [
+        "morning"
+      ],
+      "times_per_day": 1,
+      "with_food": null
+    },
+    {
+      "drug_name": "Lisinopril",
+      "prn": false,
+      "stopped": true,
+      "source_quote": "Lisinopril 10mg tablet\nDiscontinue — switching to losartan",
+      "confidence": 1,
+      "dose_quantity": null,
+      "dose_unit": null,
+      "duration_days": null,
+      "form": "tablet",
+      "frequency_as_written": "Discontinue — switching to losartan",
+      "quantity_dispensed": null,
+      "special_instructions": "switching to losartan",
+      "strength": "10mg",
+      "times_of_day": [],
+      "times_per_day": null,
+      "with_food": null
+    },
+    {
+      "drug_name": "Losartan",
+      "prn": false,
+      "stopped": false,
+      "source_quote": "Losartan 50mg tablet\n1 tablet every morning (1-0-0)",
+      "confidence": 1,
+      "dose_quantity": 1,
+      "dose_unit": "tablet",
+      "duration_days": null,
+      "form": "tablet",
+      "frequency_as_written": "1 tablet every morning (1-0-0)",
+      "quantity_dispensed": null,
+      "special_instructions": null,
+      "strength": "50mg",
+      "times_of_day": [
+        "morning"
+      ],
+      "times_per_day": 1,
+      "with_food": null
+    }
+  ]
+}

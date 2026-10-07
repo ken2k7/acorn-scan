@@ -1,0 +1,60 @@
+{
+  "dispensed_date": "2026-10-05",
+  "pharmacy": "GUARDIAN COMMUNITY PHARMACY (fictional branch)",
+  "medications": [
+    {
+      "drug_name": "AMOXICILLIN",
+      "prn": false,
+      "stopped": false,
+      "source_quote": "AMOXICILLIN 500MG CAPSULE\nTAKE ONE (1) CAPSULE THREE TIMES A DAY 1-1-1 FOR 7 DAYS\nQty: 21 capsule\nFor: Infection\nCOMPLETE THE FULL COURSE",
+      "confidence": 0.95,
+      "dose_quantity": 1,
+      "dose_unit": "capsule",
+      "duration_days": 7,
+      "form": "capsule",
+      "frequency_as_written": "THREE TIMES A DAY 1-1-1 FOR 7 DAYS",
+      "quantity_dispensed": "21 capsule",
+      "special_instructions": "COMPLETE THE FULL COURSE. For: Infection",
+      "strength": "500MG",
+      "times_of_day": [],
+      "times_per_day": 3,
+      "with_food": null
+    },
+    {
+      "drug_name": "PREDNISOLONE",
+      "prn": false,
+      "stopped": false,
+      "source_quote": "PREDNISOLONE 5MG TABLET\nTAKE ONE (1) TABLET TWICE A DAY 1-0-1 AFTER FOOD\nQty: 60 tablet\nMay cause drowsiness",
+      "confidence": 0.95,
+      "dose_quantity": 1,
+      "dose_unit": "tablet",
+      "duration_days": null,
+      "form": "tablet",
+      "frequency_as_written": "TWICE A DAY 1-0-1 AFTER FOOD",
+      "quantity_dispensed": "60 tablet",
+      "special_instructions": "May cause drowsiness",
+      "strength": "5MG",
+      "times_of_day": [],
+      "times_per_day": 2,
+      "with_food": "after_food"
+    },
+    {
+      "drug_name": "SALBUTAMOL",
+      "prn": true,
+      "stopped": false,
+      "source_quote": "SALBUTAMOL 100MCG INHALER\nINHALE TWO (2) PUFFS WHEN REQUIRED FOR BREATHLESSNESS PRN\nQty: 1 inhaler\nMax 8 puffs a day",
+      "confidence": 0.95,
+      "dose_quantity": 2,
+      "dose_unit": "puffs",
+      "duration_days": null,
+      "form": "inhaler",
+      "frequency_as_written": "WHEN REQUIRED FOR BREATHLESSNESS PRN",
+      "quantity_dispensed": "1 inhaler",
+      "special_instructions": "Max 8 puffs a day",
+      "strength": "100MCG",
+      "times_of_day": [],
+      "times_per_day": null,
+      "with_food": null
+    }
+  ]
+}
