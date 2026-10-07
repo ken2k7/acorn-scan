@@ -19,6 +19,9 @@ Rules:
   1-0-1 twice daily, 1-1-1 three times daily. OM = morning, ON = night, BD = twice daily,
   TDS = three times daily, QDS = four times daily, PRN = as needed.
 - times_of_day only if the label says when (morning, night, etc.).
+- stopped: true ONLY if the label explicitly says to stop or discontinue this
+  medication (e.g. "stop", "discontinue", "cease"). Otherwise false. Never infer a
+  stop from a drug simply being absent, or from a quantity running out.
 - duration_days only if the label states how long to take it. A dispensed quantity
   ("x 60 tabs") is NOT a duration.
 - Do not extract the patient's name, ID number or address.
@@ -48,13 +51,14 @@ const SCHEMA = {
           times_of_day: { type: 'ARRAY', items: S('STRING', { enum: ['morning', 'midday', 'evening', 'bedtime'] }) },
           with_food: N('STRING', { enum: ['before_food', 'with_food', 'after_food', 'empty_stomach'] }),
           prn: S('BOOLEAN'),
+          stopped: S('BOOLEAN'),
           duration_days: N('NUMBER'),
           quantity_dispensed: N('STRING'),
           special_instructions: N('STRING'),
           source_quote: S('STRING'),
           confidence: S('NUMBER'),
         },
-        required: ['drug_name', 'prn', 'source_quote', 'confidence'],
+        required: ['drug_name', 'prn', 'stopped', 'source_quote', 'confidence'],
       },
     },
   },
@@ -103,6 +107,7 @@ function validate(raw: any) {
     .map((m: any) => ({
       ...m,
       prn: m.prn === true,
+      stopped: m.stopped === true,
       times_of_day: Array.isArray(m.times_of_day) ? m.times_of_day : [],
       confidence: typeof m.confidence === 'number' ? m.confidence : 0.5,
     }))
@@ -121,6 +126,9 @@ const SLOT: Record<string, string> = {
 }
 
 function buildSchedule(m: any) {
+  // A drug the label says to stop is never scheduled, whatever else it says.
+  if (m.stopped) return { times: [], times_assumed: false, needs_review: false, reason: 'Doctor says to stop — not added to schedule' }
+
   if (m.prn) return { times: [], times_assumed: false, needs_review: false, reason: 'Taken only when needed' }
 
   const n = m.times_per_day

@@ -96,6 +96,11 @@ Every one of these is a deliberate choice, not an accident of scope:
 - **PRN medicines are never given scheduled times.** Scheduling an "as needed"
   painkiller would tell someone to take it when they don't need it. They go in
   an **As needed** list instead.
+- **A drug the label says to stop is never scheduled.** If the label explicitly
+  says to stop or discontinue a medication, it is marked stopped, excluded from
+  the schedule, and shown greyed-out on the review screen for the user to
+  confirm — a stop is only ever taken from an explicit instruction, never
+  inferred from a drug being absent or a supply running out.
 - **The source text is shown on every card**, so the user checks against the
   label, not against the app's confident guess.
 - **Low confidence and missing essentials are flagged** (amber border + a plain

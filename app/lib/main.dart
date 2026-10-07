@@ -38,6 +38,7 @@ class Medication {
   String? frequencyAsWritten;
   String? withFood;
   bool prn;
+  bool stopped;
   String sourceQuote;
   double confidence;
 
@@ -55,6 +56,7 @@ class Medication {
     this.frequencyAsWritten,
     this.withFood,
     required this.prn,
+    required this.stopped,
     required this.sourceQuote,
     required this.confidence,
     required this.times,
@@ -73,6 +75,7 @@ class Medication {
       frequencyAsWritten: m['frequency_as_written'] as String?,
       withFood: m['with_food'] as String?,
       prn: m['prn'] == true,
+      stopped: m['stopped'] == true,
       sourceQuote: (m['source_quote'] ?? '') as String,
       confidence: (m['confidence'] as num?)?.toDouble() ?? 0.5,
       times: ((s['times'] ?? []) as List).map((e) => e.toString()).toList(),
@@ -321,7 +324,8 @@ class _ReviewScreenState extends State<ReviewScreen> {
   void initState() {
     super.initState();
     _meds = widget.medications;
-    _kept = List<bool>.filled(_meds.length, true);
+    // A drug the label says to stop starts excluded (the user can add it back).
+    _kept = _meds.map((m) => !m.stopped).toList();
   }
 
   void _confirm() {
@@ -403,6 +407,7 @@ class _MedCard extends StatelessWidget {
                     child: Text(med.drugName,
                         style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                   ),
+                  if (med.stopped) const _Pill('Stopped'),
                   if (med.prn) const _Pill('As needed'),
                   IconButton(
                     tooltip: kept ? 'Remove this line' : 'Add back',
@@ -412,6 +417,8 @@ class _MedCard extends StatelessWidget {
                 ],
               ),
 
+              if (med.stopped)
+                const _Banner('The label says to stop this medication — it will not be scheduled.'),
               if (med.needsReview && med.reason != null) _Banner(med.reason!),
 
               // Editable fields. Editing updates the in-memory object directly.
