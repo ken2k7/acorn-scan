@@ -35,8 +35,14 @@ flutter run -d chrome        # fastest loop; also runs on an iOS simulator
 Quick backend check without the app:
 
 ```bash
-curl -s -F "file=@samples/label1.jpg" http://localhost:8787/scan
+curl -s -F "file=@samples/label1.png" http://localhost:8787/scan
 ```
+
+The `samples/` folder holds three **fictional, de-identified** Singapore-style
+labels created for testing — a polyclinic dispensing sheet, a community-pharmacy
+sheet (with a stated-duration antibiotic and a PRN inhaler), and a medication
+review that discontinues a drug. They deliberately cover twice/thrice-daily
+dosing, `1-0-1` notation, PRN, a stated duration, and a stop instruction.
 
 ## 3. Approach
 
