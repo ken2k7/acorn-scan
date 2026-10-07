@@ -1,0 +1,11 @@
+node_modules/
+.env
+build/
+.dart_tool/
+app/build/
+app/.dart_tool/
+*.log
+.DS_Store
+
+# Local working notes — not part of the deliverable
+AGENTS.md
